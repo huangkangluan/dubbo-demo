@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application  name="dubbo-demo-test" owner="rocky"/>
+
+    <dubbo:registry protocol="zookeeper" address="192.168.1.205:2181" file="~/.dubbo/dubbo-demo-test.cache"/>
+
+    <dubbo:protocol name="dubbo" port="-1"/>
+
+    <!--微信配置接口-->
+    <dubbo:reference id="demoService" interface="com.mll.dd.remote.service.DemoService" check="false"/>
+    
+</beans>
